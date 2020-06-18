@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using WebApplication.Models;
+using VKontakte.Models;
 
-namespace WebApplication.Controllers
+namespace VKontakte.Controllers
 {
     [Authorize]
     public class AdminController : Controller
