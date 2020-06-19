@@ -1,4 +1,5 @@
 ﻿using IdentityModel;
+using IdentityServer4;
 using IdentityServer4.Models;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,22 @@ namespace WebApp.IdentityServer
                     {
                         "OrdersAPI"
                     }
+                },
+                new Client
+                {
+                    ClientId = "client_id_mvc",
+                    ClientSecrets = {new Secret("client_secret_mvc".ToSha256())},
+
+                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowedScopes =
+                    {
+                        "OrdersAPI",
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile
+                    },
+
+                    RedirectUris = {"https://localhost:2001/signin-oidc"},
+                    RequireConsent = false
                 }
             };
 
@@ -35,7 +52,8 @@ namespace WebApp.IdentityServer
         public static IEnumerable<IdentityResource> GetIdentityResources() =>
             new List<IdentityResource>
             {
-                new IdentityResources.OpenId()
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile()
             };
     }
 }

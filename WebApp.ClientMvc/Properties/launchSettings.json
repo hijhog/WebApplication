@@ -1,10 +1,10 @@
 ﻿{
   "profiles": {
-    "WebApp.UsersApi": {
+    "WebApp.ClientMvc": {
       "commandName": "Project",
-      "launchBrowser": false,
+      "launchBrowser": true,
       "launchUrl": "site/index",
-      "applicationUrl": "https://localhost:6001;http://localhost:6000",
+      "applicationUrl": "https://localhost:2001;http://localhost:2000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
