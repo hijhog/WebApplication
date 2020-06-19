@@ -30,6 +30,8 @@ namespace WebApp.ClientMvc
                     config.SaveTokens = true;
 
                     config.ResponseType = "code";
+
+                    config.Scope.Add("OrdersAPI");
                 });
 
             services.AddControllersWithViews();
